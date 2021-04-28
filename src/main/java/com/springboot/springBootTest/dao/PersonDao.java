@@ -8,11 +8,11 @@ import java.util.UUID;
 
 public interface PersonDao {
 
-    int insertPerson(UUID id, Person person);
+    Person insertPerson(UUID id, String name);
 
-    default int insertPerson(Person person) {
+    default Person insertPerson(String name) {
         UUID id = UUID.randomUUID();
-        return insertPerson(id, person);
+        return insertPerson(id, name);
     }
 
     List<Person> selectAllPeople();
